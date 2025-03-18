@@ -1,6 +1,6 @@
-import { D1Database } from "@cloudflare/workers-types";
+import type { D1Database } from "@cloudflare/workers-types";
 
-const projects: Project[] = [
+const local_projects: Project[] = [
 	{
 		name: "tougrel.dev",
 		author: true,
@@ -54,7 +54,7 @@ export default defineEventHandler(async (event) => {
 			results = await response.json();
 		}
 	} else {
-		results = projects;
+		results = local_projects;
 	}
 
 	return results;
@@ -65,7 +65,7 @@ interface Project {
 	author: boolean;
 	author_name: string;
 	description: string;
-	links: ProjectLinks[];
+	links: string | ProjectLinks[];
 }
 
 interface ProjectLinks {
