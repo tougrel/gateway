@@ -68,18 +68,18 @@ Below you can find how the SQL tables look like. Of course, you can change them 
 
 ### User
 
-| Column     | Type    | Comment |
-| ---------- | ------- | ------- |
-| name       | text    |         |
-| avatar_url | integer |         |
-| social     | text    | JSON    |
+| Column     | Type | Comment                                               |
+| ---------- |------|-------------------------------------------------------|
+| name       | text |                                                       |
+| avatar_url | text |                                                       |
+| social     | text | JSON array (refer to `server/user.get.ts` for tyhpes) |
 
 ### Projects
 
-| Column      | Type    | Comment |
-| ----------- | ------- | ------- |
-| name        | text    |         |
-| author      | integer |         |
-| author_name | text    |         |
-| description | text    |         |
-| links       | text    | JSON    |
+| Column      | Type    | Comment                                                  |
+| ----------- | ------- |----------------------------------------------------------|
+| name        | text    |                                                          |
+| author      | integer | Boolean (tinyint)                                        |
+| author_name | text    |                                                          |
+| description | text    |                                                          |
+| links       | text    | JSON array (refer to `server/projects.get.ts` for types) |
