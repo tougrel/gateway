@@ -1,6 +1,6 @@
 # Tougrel's Gateway
 
-![Static Badge](https://shieldio.tougrel.dev/badge/Powered_by_Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)
+![Static Badge](https://shieldsio.tougrel.dev/badge/Powered_by_Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)
 
 Welcome to my gateway template! You can use this freely to set up your own
 and show what projects you created and contributed!
