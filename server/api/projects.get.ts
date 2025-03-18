@@ -1,6 +1,6 @@
-import { D1Database } from "@cloudflare/workers-types";
+import type { D1Database } from "@cloudflare/workers-types";
 
-const projects: Project[] = [
+const local_projects: Project[] = [
 	{
 		name: "tougrel.dev",
 		author: true,
@@ -30,7 +30,7 @@ export default defineEventHandler(async (event) => {
 	const isCloudflare = "cloudflare" in context;
 
 	let results;
-	if (isCloudflare) {
+	if (isCloudflare && process.env.USE_CLOUDFLARE_D1 === "true") {
 		const database: D1Database = context.cloudflare.env.DATABASE;
 		const query = await database
 			.prepare("SELECT name, author, author_name, description, json(links) as links FROM Projects")
@@ -54,7 +54,7 @@ export default defineEventHandler(async (event) => {
 			results = await response.json();
 		}
 	} else {
-		results = projects;
+		results = local_projects;
 	}
 
 	return results;
@@ -65,7 +65,7 @@ interface Project {
 	author: boolean;
 	author_name: string;
 	description: string;
-	links: ProjectLinks[];
+	links: string | ProjectLinks[];
 }
 
 interface ProjectLinks {
