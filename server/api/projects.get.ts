@@ -30,7 +30,7 @@ export default defineEventHandler(async (event) => {
 	const isCloudflare = "cloudflare" in context;
 
 	let results;
-	if (isCloudflare) {
+	if (isCloudflare && process.env.USE_CLOUDFLARE_D1 === "true") {
 		const database: D1Database = context.cloudflare.env.DATABASE;
 		const query = await database
 			.prepare("SELECT name, author, author_name, description, json(links) as links FROM Projects")
