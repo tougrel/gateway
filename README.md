@@ -18,12 +18,28 @@ pnpm install
 ```
 
 ```dotenv
+# The URL of the website
+SITE_URL=""
+
+# The name of the website
+SITE_NAME=""
+
+# The description of the website
+SITE_DESCRIPTION=""
+
+# The locale (language/i18n) of the website
+SITE_LOCALE=""
+
 # You can skip this! I use it to test if everything works with the cloudflare-pages preset!
 NITRO_PRESET=""
 
 # In case you don't want to use cloudflare analytics you can remove
 # this and the nuxt-cloudflare-analytics package from the project
 CLOUDFLARE_ANALYTICS_TOKEN=""
+
+# Enable this in case you want to use Cloudflare D1 as your database
+# when deploying in cloudflare pages! Don't forget to bind it to your worker/page!
+USE_CLOUDFLARE_D1="false"
 
 # To enable this you need to set useExternalAPI to true in the nuxt.config.ts file
 # Use this if you get your data from your own API
