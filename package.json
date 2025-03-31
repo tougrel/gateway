@@ -20,7 +20,7 @@
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20240512.0",
 		"@iconify-json/mdi": "^1.1.66",
-		"@nuxt/devtools": "^1.1.5",
+		"@nuxt/devtools": "^2.3.2",
 		"@nuxt/fonts": "^0.10.3",
 		"@nuxt/icon": "^1.10.3",
 		"@nuxt/image": "^1.9.0",
